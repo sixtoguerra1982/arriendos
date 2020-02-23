@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_23_194429) do
+ActiveRecord::Schema.define(version: 2020_02_23_212238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "arriendos", force: :cascade do |t|
+    t.bigint "serie_id"
+    t.bigint "pelicula_id"
+    t.bigint "usuario_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pelicula_id"], name: "index_arriendos_on_pelicula_id"
+    t.index ["serie_id"], name: "index_arriendos_on_serie_id"
+    t.index ["usuario_id"], name: "index_arriendos_on_usuario_id"
+  end
 
   create_table "peliculas", force: :cascade do |t|
     t.string "titulo"
@@ -41,4 +52,7 @@ ActiveRecord::Schema.define(version: 2020_02_23_194429) do
     t.index ["email"], name: "index_usuarios_on_email", unique: true
   end
 
+  add_foreign_key "arriendos", "peliculas"
+  add_foreign_key "arriendos", "series", column: "serie_id"
+  add_foreign_key "arriendos", "usuarios"
 end
