@@ -1,6 +1,14 @@
 
-<label>Cliente</label>
+<label for="select_usuarios">Cliente</label>
 <%= select_tag "select_usuarios", options_from_collection_for_select(@usuarios, "id", "name"), :include_blank => true , class: "form-control form-control-lg"
+ %>
+
+<label for="select_peliculas">Peliculas</label>
+<%= select_tag "select_peliculas", options_from_collection_for_select(@peliculas, "id", "titulo"), :include_blank => true , class: "form-control form-control-lg"
+ %>
+
+<label for="select_series">Series</label>
+<%= select_tag "select_series", options_from_collection_for_select(@series, "id", "titulo"), :include_blank => true , class: "form-control form-control-lg"
  %>
 
 <script>
@@ -8,7 +16,39 @@
 		$('#select_usuarios').select2({
 				placeholder: "Seleccione un Usuario",
 				allowClear: true,
+				selectOnClose: true,
 				style: "min-width: 100%"
 			});
+
+		$('#select_peliculas').select2({
+				placeholder: "Seleccione Pelicula",
+				allowClear: true,
+				selectOnClose: true,
+				style: "min-width: 100%"
+			});
+
+		$('#select_series').select2({
+				placeholder: "Seleccione Serie",
+				allowClear: true,
+				selectOnClose: true,
+				style: "min-width: 100%"
+			});
+
+		$("#select_peliculas").change(function(){
+			var valor = $(this). val();
+			if (valor != null) {
+				$('#select_series').val('defaultValue'); 
+				$('#select_series').change(); 
+			}
+		});
+
+		$("#select_series").change(function(){
+			var valor = $(this). val();
+			if (valor != null) {
+				$('#select_peliculas').val('defaultValue'); 
+				$('#select_peliculas').change(); 
+			}
+		});
+
 	})
 </script>
