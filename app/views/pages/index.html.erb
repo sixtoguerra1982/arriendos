@@ -1,11 +1,7 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
 
-<select id="select_usuarios">
-	<% @usuarios.each do |user|%>
-		<option value="<%= user.id %>"><%= user.name %></option>
-  <% end %> 
-</select>
+<label>Cliente</label>
+<%= select_tag "select_usuarios", options_from_collection_for_select(@usuarios, "id", "name"), :include_blank => true , class: "form-control form-control-lg"
+ %>
 
 <script>
 	$(document).ready(function() { 
