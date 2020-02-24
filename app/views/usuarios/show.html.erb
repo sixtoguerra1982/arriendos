@@ -10,5 +10,33 @@
   <%= @usuario.email %>
 </p>
 
+<h1>Arriendos</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Fecha</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @arriendos.each do |arriendo| %>
+      <tr>
+      	<% if ! arriendo.pelicula.blank? %>
+        	<td><%= arriendo.pelicula.titulo %></td>
+        <% else %>
+        	<td><%= arriendo.serie.titulo %></td>
+        <% end %>
+     	<td><%= arriendo.created_at %></td>
+        <td><%= link_to 'Show', root_path %></td>
+        <td><%= link_to 'Edit', root_path %></td>
+        <td><%= link_to 'Destroy', root_path %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
 <%= link_to 'Edit', edit_usuario_path(@usuario) %> |
 <%= link_to 'Back', usuarios_path %>

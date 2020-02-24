@@ -10,6 +10,7 @@ class UsuariosController < ApplicationController
   # GET /usuarios/1
   # GET /usuarios/1.json
   def show
+    @arriendos =  @usuario.arriendos
   end
 
   # GET /usuarios/new
