@@ -1,4 +1,13 @@
 $('#alerta-mensaje').html('<%= @notice %>')
 $('#myAlert').removeClass('d-none');
 $('html, body').animate({scrollTop:0}, 1250);
+
+
+
+$('#select_series').val('defaultValue'); 
+$('#select_series').change(); 
+$('#select_peliculas').val('defaultValue'); 
+$('#select_peliculas').change(); 
+
+
 $("#select_peliculas").focus();
