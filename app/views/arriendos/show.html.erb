@@ -1,17 +1,21 @@
 <p id="notice"><%= notice %></p>
 <div class="mt-5">
-	<p>id: <%= @arriendo.id %></p>
-	<p>Nombre Usuario: <%= @arriendo.usuario.name %></p>
-	<p>Email Usuario: <%= @arriendo.usuario.email %></p>
+	<div class="card border-primary mb-3" style="max-width: 20rem;">
+		<div class="pl-1 pt-1">
+			<p>id: <%= @arriendo.id %></p>
+			<p>Nombre Usuario: <%= @arriendo.usuario.name %></p>
+			<p>Email Usuario: <%= @arriendo.usuario.email %></p>
 
-	<% if @arriendo.pelicula_id.blank? %>
-	 <p>Serie : <%= @arriendo.serie.titulo %></p>
-	<% else %>
-	 <p>Pelicula :  <%= @arriendo.pelicula.titulo %> </p>
-	<% end %>
+			<% if @arriendo.pelicula_id.blank? %>
+			 <p>Serie : <%= @arriendo.serie.titulo %></p>
+			<% else %>
+			 <p>Pelicula :  <%= @arriendo.pelicula.titulo %> </p>
+			<% end %>
 
-	<p>Fecha Creación: <%= @arriendo.created_at %></p>
-	<p>Fecha Actualización: <%= @arriendo.updated_at %></p>
+			<p>Fecha Creación: <%= @arriendo.created_at %></p>
+			<p>Fecha Actualización: <%= @arriendo.updated_at %></p>
+		</div>
+	</div>
 </div>
 
 <%= link_to 'Edit', edit_arriendo_path(@arriendo) %> | 

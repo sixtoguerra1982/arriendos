@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Arriendos</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Cliente</th>
+      <th>Titulo</th>
+      <th>Serie</th>
+      <th>Pelicula</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @arriendos.each do |arriendo| %>
+      <tr>
+        <td><%= arriendo.id %></td>
+        <td><%= arriendo.usuario.name %>&nbsp;<%= arriendo.usuario.email %></td>
+        <% if arriendo.pelicula_id.blank? %>
+          <td><%= arriendo.serie.titulo %></td>
+        <% else %>
+          <td><%= arriendo.pelicula.titulo %></td>
+        <% end %>
+        <% if arriendo.serie_id.blank? %>
+          <td>&nbsp;</td>
+          <td>X</td>
+        <% else %>
+          <td>X</td>
+          <td>&nbsp;</td>
+        <% end %>
+        <td><%= link_to 'Show', arriendo %></td>
+        <td><%= link_to 'Edit', edit_arriendo_path(arriendo) %></td>
+        <td><%= link_to 'Destroy', arriendo, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cliente', new_usuario_path %>

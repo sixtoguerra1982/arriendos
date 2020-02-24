@@ -1,24 +1,25 @@
-<div class="form">
-	<label for="select_usuarios">Cliente</label>
-	<%= select_tag "select_usuarios", options_from_collection_for_select(@usuarios, "id", "name"), :include_blank => true , class: "form-control form-control-lg"
-	 %>
- </div>
-<div class="form">
-	<label for="select_peliculas">Peliculas</label>
-	<%= select_tag "select_peliculas", options_from_collection_for_select(@peliculas, "id", "titulo"), :include_blank => true , class: "form-control form-control-lg"
-	 %>
-</div>
+<form>
+	<div class="form">
+		<label for="select_usuarios">Cliente</label>
+		<%= select_tag "select_usuarios", options_from_collection_for_select(@usuarios, "id", "name"), :include_blank => true , class: "form-control form-control-lg"
+		 %>
+	 </div>
+	<div class="form">
+		<label for="select_peliculas">Peliculas</label>
+		<%= select_tag "select_peliculas", options_from_collection_for_select(@peliculas, "id", "titulo"), :include_blank => true , class: "form-control form-control-lg"
+		 %>
+	</div>
 
-<div class="form">
-	<label for="select_series">Series</label>
-	<%= select_tag "select_series", options_from_collection_for_select(@series, "id", "titulo"), :include_blank => true , class: "form-control form-control-lg"
-	 %>
-</div>
+	<div class="form">
+		<label for="select_series">Series</label>
+		<%= select_tag "select_series", options_from_collection_for_select(@series, "id", "titulo"), :include_blank => true , class: "form-control form-control-lg"
+		 %>
+	</div>
 
-<div class="form">
-	<div class='btn btn-dark btn-lg btn-block' id='BtnGuardar'> Guardar </div>
-</div>
-
+	<div class="form">
+		<div class='btn btn-dark btn-lg btn-block' id='BtnGuardar'> Guardar </div>
+	</div>
+</form>
 <script>
 	$(document).ready(function() { 
 		$('#select_usuarios').select2({

@@ -51,7 +51,17 @@ class ArriendosController < ApplicationController
   end
 
   def destroy
-    byebug
+    @arriendo = Arriendo.find(params[:id].to_i)
+    @arriendo.destroy
+    respond_to do |format|
+      format.html { redirect_to arriendos_url, notice: 'Arriendo was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def index
+    @arriendos = Arriendo.all.order(created_at: :desc)
+    @arriendo = Arriendo.new
   end
 
 
