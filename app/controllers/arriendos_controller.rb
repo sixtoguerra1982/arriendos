@@ -28,6 +28,9 @@ class ArriendosController < ApplicationController
   end
 
   def edit
+    @usuarios = Usuario.all
+    @peliculas = Pelicula.all
+    @series = Serie.all
     @arriendo = Arriendo.find(params[:id].to_i)
   end
 
