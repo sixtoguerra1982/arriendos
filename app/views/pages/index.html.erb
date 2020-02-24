@@ -1,4 +1,3 @@
-
 <div class="form">
 	<label for="select_usuarios">Cliente</label>
 	<%= select_tag "select_usuarios", options_from_collection_for_select(@usuarios, "id", "name"), :include_blank => true , class: "form-control form-control-lg"
@@ -14,6 +13,10 @@
 	<label for="select_series">Series</label>
 	<%= select_tag "select_series", options_from_collection_for_select(@series, "id", "titulo"), :include_blank => true , class: "form-control form-control-lg"
 	 %>
+</div>
+
+<div class="form">
+	<div class='btn btn-dark btn-lg btn-block' id='BtnGuardar'> Guardar </div>
 </div>
 
 <script>
@@ -53,6 +56,24 @@
 				$('#select_peliculas').val('defaultValue'); 
 				$('#select_peliculas').change(); 
 			}
+		});
+
+		$('#BtnGuardar').on('click', function (e) {
+		  var user = $('#select_usuarios').val();	
+		  var pelicula = $('#select_peliculas').val();	
+		  var serie = $('#select_series').val();
+		  $.ajax({
+	        type: 'POST',
+	        url: "<%= arriendos_path %>",
+	        dataType: "script",
+	        data: {user: user, pelicula: pelicula, serie: serie},
+	        success: function(respuesta) {
+					console.log(respuesta);
+					},
+					error: function() {
+		      console.log("No se ha podido obtener la información");
+	    		}
+	    });
 		});
 
 	})

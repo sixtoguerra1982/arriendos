@@ -1,0 +1,12 @@
+<div id="myAlert" class="d-none mt-5 alert alert-warning alert-dismissible fade show" role="alert">
+  <strong id="alerta-mensaje"><%= Time.now %></strong>
+  <button id="btnclose" type="button" class="close" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<script type="text/javascript">
+	$('#btnclose').on('click', function () {
+	  $('#myAlert').addClass('d-none');
+	})
+</script>
