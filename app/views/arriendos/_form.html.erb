@@ -28,23 +28,12 @@
     <%= select_tag "select_series", options_from_collection_for_select(@series, "id", "titulo"), :include_blank => true , class: "form-control form-control-lg" %>
   </div>
 
-  <div class="field">
-    <%= form.label :usuario_id %>
-    <%= form.text_field :usuario_id %>
-  </div>
+  <%= form.hidden_field :usuario_id %>
+  <%= form.hidden_field :serie_id %>
+  <%= form.hidden_field :pelicula_id %>
 
-  <div class="field">
-    <%= form.label :serie_id %>
-    <%= form.text_field :serie_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :pelicula_id %>
-    <%= form.text_field :pelicula_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form">
+    <%= form.submit 'Update' , :class => 'btn btn-dark btn-lg btn-block'  %>
   </div>
 <% end %>
 

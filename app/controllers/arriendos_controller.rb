@@ -35,6 +35,27 @@ class ArriendosController < ApplicationController
   end
 
   def update
-    byebug
+    @arriendo = Arriendo.find(params[:id].to_i)
+    @usuarios = Usuario.all
+    @peliculas = Pelicula.all
+    @series = Serie.all
+    respond_to do |format|
+      if @arriendo.update(arriendo_params)
+        format.html { redirect_to @arriendo, notice: 'Arriendo was successfully updated.' }
+        format.json { render :show, status: :ok, location: @arriendo }
+      else
+        format.html { render :edit }
+        format.json { render json: @arriendo.errors, status: :unprocessable_entity }
+      end
+    end
   end
+
+
+
+  private
+    # Only allow a list of trusted parameters through.
+    def arriendo_params
+      params.require(:arriendo).permit(:usuario_id, :pelicula_id, :serie_id)
+    end
+
 end

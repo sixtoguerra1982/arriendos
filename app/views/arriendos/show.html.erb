@@ -1,5 +1,6 @@
+<p id="notice"><%= notice %></p>
 <div class="mt-5">
-	<p>id: <%= @arriendo.serie_id %></p>
+	<p>id: <%= @arriendo.id %></p>
 	<p>Nombre Usuario: <%= @arriendo.usuario.name %></p>
 	<p>Email Usuario: <%= @arriendo.usuario.email %></p>
 
@@ -14,5 +15,5 @@
 </div>
 
 <%= link_to 'Edit', edit_arriendo_path(@arriendo) %> | 
-<%= link_to 'Back', :back %>
-    
+<%= link_to 'Back', :back %> | 
+<%= link_to 'Cliente', usuario_path(@arriendo.usuario) %>     
