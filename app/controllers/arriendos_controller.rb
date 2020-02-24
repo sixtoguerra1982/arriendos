@@ -50,6 +50,10 @@ class ArriendosController < ApplicationController
     end
   end
 
+  def destroy
+    byebug
+  end
+
 
 
   private
