@@ -22,4 +22,8 @@ class ArriendosController < ApplicationController
       end
   	end
   end
+
+  def show
+    @arriendo = Arriendo.find(params[:id].to_i)
+  end
 end

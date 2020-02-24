@@ -1,0 +1,18 @@
+<div class="mt-5">
+	<p>id: <%= @arriendo.serie_id %></p>
+	<p>Nombre Usuario: <%= @arriendo.usuario.name %></p>
+	<p>Email Usuario: <%= @arriendo.usuario.email %></p>
+
+	<% if @arriendo.pelicula_id.blank? %>
+	 <p>Serie : <%= @arriendo.serie.titulo %></p>
+	<% else %>
+	 <p>Pelicula :  <%= @arriendo.pelicula.titulo %> </p>
+	<% end %>
+
+	<p>Fecha Creación: <%= @arriendo.created_at %></p>
+	<p>Fecha Actualización: <%= @arriendo.updated_at %></p>
+</div>
+
+<%= link_to 'Edit', root_path %> |
+<%= link_to 'Back', :back %>
+    
