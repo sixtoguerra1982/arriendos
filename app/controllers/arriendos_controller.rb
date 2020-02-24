@@ -26,4 +26,12 @@ class ArriendosController < ApplicationController
   def show
     @arriendo = Arriendo.find(params[:id].to_i)
   end
+
+  def edit
+    @arriendo = Arriendo.find(params[:id].to_i)
+  end
+
+  def update
+    byebug
+  end
 end
