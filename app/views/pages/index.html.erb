@@ -20,6 +20,15 @@
 		<div class='btn btn-success btn-lg btn-block' id='BtnGuardar'> Guardar </div>
 	</div>
 </form>
+
+<%= search_form_for @search do |f| %>
+  <div class="field">
+    <%= f.label :titulo, "Titulo Pelicula" %>
+    <%= f.text_field :titulo %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>
+
 <script>
 	$(document).ready(function() { 
 		$('#select_usuarios').select2({

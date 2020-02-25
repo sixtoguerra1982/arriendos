@@ -1,0 +1,27 @@
+<h1>Peliculas</h1>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Titulo</th>
+        <th>Genero</th>
+        <th>Precio $</th>
+        <th>Duración</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @peliculas.each do |pelicula| %>
+        <tr>
+          <td><%= pelicula.id %></td>
+          <td><%= pelicula.titulo %></td>
+          <td><%= pelicula.genero %></td>
+          <td><%= pelicula.precio_arriendo %></td>
+          <td><%= pelicula.duracion %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%= link_to 'Back', :back %>
