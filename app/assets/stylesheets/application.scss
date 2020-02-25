@@ -11,12 +11,14 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
- *= require_self
  *= require select2
  *= require bootstrap.min.css
+ *= require_self
  */
 
  @import "bootstrap";
+
+
 
 .form{
 	border : 0.5px black solid;
@@ -26,4 +28,8 @@
 nav{
 	border : 0.5px black solid;
 	padding: 10px;
+}
+
+body {
+	background: #e0d3d3 repeat;
 }
