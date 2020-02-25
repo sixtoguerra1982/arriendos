@@ -12,4 +12,12 @@ class Arriendo < ApplicationRecord
 	    end
   	end
 
+  	def actualizado?
+  		if self.created_at == self.updated_at
+  			false
+  		else
+  			true
+  		end
+  	end
+
 end

@@ -11,17 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <div class="form-group">
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.email_field :email %>
-  </div>
+    <div class="field form">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-control form-control-lg" %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit "Create Cliente" %>
+    <div class="field form">
+      <%= form.label :email %>
+      <%= form.email_field :email, class: "form-control form-control-lg" %>
+    </div>
+
+    <div class="form">
+      <%= form.submit "Guardar", class: "btn btn-dark btn-lg btn-block" %>
+    </div>
+
   </div>
 <% end %>
