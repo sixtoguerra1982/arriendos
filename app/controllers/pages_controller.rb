@@ -4,6 +4,5 @@ class PagesController < ApplicationController
   	@peliculas = Pelicula.all
   	@series = Serie.all
   	@search = Pelicula.search(params[:q])
-    @peliculas = @search.result
   end
 end
