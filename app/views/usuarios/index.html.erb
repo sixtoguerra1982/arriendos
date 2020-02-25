@@ -16,9 +16,9 @@
       <tr>
         <td><%= usuario.name %></td>
         <td><%= usuario.email %></td>
-        <td><%= link_to 'Show', usuario %></td>
-        <td><%= link_to 'Edit', edit_usuario_path(usuario) %></td>
-        <td><%= link_to 'Destroy', usuario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', usuario, class: "btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_usuario_path(usuario), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', usuario, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -32,9 +32,9 @@
         	<td><%= arriendo.serie.titulo %></td>
         <% end %>
      	<td><%= arriendo.created_at %></td>
-        <td><%= link_to 'Show', arriendo_path(arriendo) %></td>
-        <td><%= link_to 'Edit', edit_arriendo_path(arriendo) %></td>
-        <td><%= link_to 'Destroy', arriendo, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <td><%= link_to 'Show', arriendo_path(arriendo), class: "btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_arriendo_path(arriendo) , class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', arriendo, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
       </tr>
     <% end %>
   </tbody>

@@ -31,9 +31,9 @@
           <td>X</td>
           <td>&nbsp;</td>
         <% end %>
-        <td><%= link_to 'Show', arriendo %></td>
-        <td><%= link_to 'Edit', edit_arriendo_path(arriendo) %></td>
-        <td><%= link_to 'Destroy', arriendo, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <td><%= link_to 'Show', arriendo, class: "btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_arriendo_path(arriendo), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', arriendo, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
       </tr>
     <% end %>
   </tbody>
