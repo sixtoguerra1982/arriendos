@@ -22,11 +22,12 @@
 </form>
 
 <%= search_form_for @search do |f| %>
-  <div class="field">
+  <div class="form">
     <%= f.label :titulo, "Titulo Pelicula" %>
-    <%= f.text_field :titulo %>
+    <%= f.text_field :titulo , class: 'form-control form-control-lg'  %>
+    <hr>
+    <div class="actions"><%= f.submit "Search" , class: 'btn btn-success btn-lg' %></div>
   </div>
-  <div class="actions"><%= f.submit "Search" %></div>
 <% end %>
 
 <script>
