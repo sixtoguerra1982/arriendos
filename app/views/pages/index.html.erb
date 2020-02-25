@@ -6,13 +6,13 @@
 	 </div>
 	<div class="form">
 		<label for="select_peliculas">Peliculas</label>
-		<%= select_tag "select_peliculas", options_from_collection_for_select(@peliculas, "id", "titulo"), :include_blank => true , class: "form-control form-control-lg"
+		<%= select_tag "select_peliculas", options_from_collection_for_select(@peliculas, "id", "titulo"), :include_blank => true , class: "form-control form-control-lg", multiple: true
 		 %>
 	</div>
 
 	<div class="form">
 		<label for="select_series">Series</label>
-		<%= select_tag "select_series", options_from_collection_for_select(@series, "id", "titulo"), :include_blank => true , class: "form-control form-control-lg"
+		<%= select_tag "select_series", options_from_collection_for_select(@series, "id", "titulo"), :include_blank => true , class: "form-control form-control-lg", multiple: true
 		 %>
 	</div>
 
@@ -42,22 +42,6 @@
 				selectOnClose: true,
 				style: "min-width: 100%"
 			});
-
-		$("#select_peliculas").change(function(){
-			var valor = $(this). val();
-			if (valor != null) {
-				$('#select_series').val('defaultValue'); 
-				$('#select_series').change(); 
-			}
-		});
-
-		$("#select_series").change(function(){
-			var valor = $(this). val();
-			if (valor != null) {
-				$('#select_peliculas').val('defaultValue'); 
-				$('#select_peliculas').change(); 
-			}
-		});
 
 		$('#BtnGuardar').on('click', function (e) {
 		  var user = $('#select_usuarios').val();	
