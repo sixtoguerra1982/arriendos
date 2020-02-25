@@ -5,19 +5,33 @@ class ArriendosController < ApplicationController
   		@notice = "No se ha seleccionado Usuario a Arrendar"
   	else
   		user = Usuario.find(params[:user].to_i)
-  		a = Arriendo.new
-  		a.usuario = user
+
   		if params[:pelicula].blank? && params[:serie].blank?
   			@notice = "No se ha seleccionado Pelicula o Serie"
   		else
-  			if params[:serie].blank?
-  				a.pelicula = Pelicula.find(params[:pelicula].to_i)
-  			else
-  				a.serie = Serie.find(params[:serie].to_i)
-  			end
+
+  			peliculas = params[:pelicula]
+        if ! peliculas.blank?
+          peliculas.each do |pel|
+            a = Arriendo.new
+            a.usuario = user
+            a.pelicula_id = pel.to_i
+            a.save
+          end
+        end
+
+        series = params[:serie]
+        if ! series.blank?
+          series.each do |serie|
+            a = Arriendo.new
+            a.usuario = user
+            a.serie_id = serie.to_i
+            a.save
+          end
+        end
+
   		end
   		if @notice == ""
-        a.save 
   		  @notice = "Arriendo Guardado"
       end
   	end
